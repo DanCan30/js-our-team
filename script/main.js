@@ -35,9 +35,24 @@ let teamMembers = [
 ]
 
 for ( let i = 0; i < teamMembers.length; i++) {
+    let card = document.createElement("div");
+    card.classList.add("card");
+
+    card.innerHTML = `
+    <div class="img-container">
+        <img src="./img./${teamMembers[i].imgSrc}" alt="${teamMembers[i].name}">
+    </div>
+    <div class="info-container">
+        <h4>${teamMembers[i].name}</h4>
+        <span>${teamMembers[i].role}</span>
+    </div>`;
+
+
+
+
+
+
     let memberInfo = `${teamMembers[i].name}, ${teamMembers[i].role}, ${teamMembers[i].imgSrc}`;
     console.log(memberInfo);
-    let cardMember = document.createElement("p");
-    cardMember.innerHTML = memberInfo;
-    wrapper.append(cardMember);
+    wrapper.append(card);
 }
