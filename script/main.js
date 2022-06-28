@@ -48,7 +48,7 @@ let teamMembers = [
     },
 ]
 
-createCard();
+createCard(0);
 
     // Add onclick function on the submit button
 addMember.addEventListener("click", function() {
@@ -66,7 +66,7 @@ addMember.addEventListener("click", function() {
         // Push the new object in the members array
     teamMembers.push(newMember);
 
-    createNewUser();
+    createCard(teamMembers.length - 1);
 });
 
 
@@ -78,16 +78,16 @@ addMember.addEventListener("click", function() {
 
 //                                          FUNCTIONS
 
-    // Function to create cards for every member of the team
-function createCard() {
+    // Function to create a new card
+function createCard(initialIndex) {
 
-    for ( let i = 0; i < teamMembers.length; i++) {
+    for ( let i = initialIndex; i < teamMembers.length; i++) {
     
             // Create a div and give it class "card"
         let card = document.createElement("div");
         card.classList.add("card");
     
-            // Set the innerHTML of the div with the infos of every member
+            // Set the innerHTML of the div with the infos of the current member
         card.innerHTML = `
         <div class="img-container">
             <img src="./img/${teamMembers[i].imgSrc}" alt="${teamMembers[i].name}">
@@ -106,30 +106,6 @@ function createCard() {
     
     };
 }
-
-
-    // Function to create a new user
-function createNewUser() {
-    
-            // Create a div and give it class "card"
-        let card = document.createElement("div");
-        card.classList.add("card");
-    
-            // Set the innerHTML with the infos of the last object of the member's array (the one added by the user)
-        card.innerHTML = `
-        <div class="img-container">
-            <img src="./img/${teamMembers[teamMembers.length - 1].imgSrc}" alt="${teamMembers[teamMembers.length - 1].name}">
-        </div>
-        <div class="info-container">
-            <h4>${teamMembers[teamMembers.length - 1].name}</h4>
-            <span>${teamMembers[teamMembers.length - 1].role}</span>
-        </div>`;
-    
-            // Add the div created to the DOM
-        wrapper.append(card);
-    
-    };
-
 
         // Function to generate a random number, userd to pick a random image from the imgPool array for each new card created
     function randomNumber(max) {
