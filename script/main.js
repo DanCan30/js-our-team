@@ -1,9 +1,5 @@
-// Wayne Barnett	Founder & CEO	        wayne-barnett-founder-ceo.jpg
-// Angela Caroll	Chief Editor	        angela-caroll-chief-editor.jpg
-// Walter Gordon	Office Manager	        walter-gordon-office-manager.jpg
-// Angela Lopez	Social Media Manager	angela-lopez-social-media-manager.jpg
-// Scott Estrada	Developer	            scott-estrada-developer.jpg
-// Barbara Ramos	Graphic Designer	    barbara-ramos-graphic-designer.jpg
+
+const wrapper = document.getElementById("wrapper");
 
 let teamMembers = [
     {
@@ -39,5 +35,9 @@ let teamMembers = [
 ]
 
 for ( let i = 0; i < teamMembers.length; i++) {
-    console.log(`${teamMembers[i].name}, ${teamMembers[i].role}, ${teamMembers[i].imgSrc}`);
+    let memberInfo = `${teamMembers[i].name}, ${teamMembers[i].role}, ${teamMembers[i].imgSrc}`;
+    console.log(memberInfo);
+    let cardMember = document.createElement("p");
+    cardMember.innerHTML = memberInfo;
+    wrapper.append(cardMember);
 }
