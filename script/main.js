@@ -118,7 +118,7 @@ function createNewUser() {
             // Set the innerHTML with the infos of the last object of the member's array (the one added by the user)
         card.innerHTML = `
         <div class="img-container">
-            <img src="./img./${teamMembers[teamMembers.length - 1].imgSrc}" alt="${teamMembers[teamMembers.length - 1].name}">
+            <img src="./img/${teamMembers[teamMembers.length - 1].imgSrc}" alt="${teamMembers[teamMembers.length - 1].name}">
         </div>
         <div class="info-container">
             <h4>${teamMembers[teamMembers.length - 1].name}</h4>
